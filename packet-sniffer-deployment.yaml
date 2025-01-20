@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: packet-sniffer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: packet-sniffer
+  template:
+    metadata:
+      labels:
+        app: packet-sniffer
+    spec:
+      containers:
+      - name: packet-sniffer
+        image: cloud-native-packet-analyzer:latest
+        securityContext:
+          privileged: true
+        command: ["/app/build/cloud_native_network_packet_analyzer"]
+        args: ["--interface", "en0", "--protocol", "TCP"]
+        volumeMounts:
+        - name: dev-volume
+          mountPath: /dev
+        ports:
+        - containerPort: 80
+      volumes:
+      - name: dev-volume
+        hostPath:
+          path: /dev
+          type: Directory

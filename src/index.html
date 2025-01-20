@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packet Sniffer Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #packets { white-space: pre-wrap; border: 1px solid #ccc; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Captured Packets</h1>
+    <button onclick="fetchPackets()">Refresh</button>
+    <div id="packets">Loading...</div>
+
+    <script>
+        async function fetchPackets() {
+            try {
+                let response = await fetch('http://localhost:5050/packets');
+                let data = await response.json();
+                document.getElementById('packets').innerText = JSON.stringify(data.packets, null, 2);
+            } catch (error) {
+                document.getElementById('packets').innerText = 'Error fetching packets';
+            }
+        }
+        fetchPackets();  // Auto-fetch packets on page load
+    </script>
+</body>
+</html>

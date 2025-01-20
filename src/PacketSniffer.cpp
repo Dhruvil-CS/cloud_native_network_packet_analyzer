@@ -2,11 +2,16 @@
 #include <iostream>
 #include <pcap.h>
 #include <cstring>
+#include <vector>
+#include <mutex>
 #include <netinet/ip.h>
 #include <netinet/tcp.h>
 #include <netinet/udp.h>
 #include <netinet/ip_icmp.h>
 #include "PacketParser.h"
+
+std::vector<std::string> PacketSniffer::capturedPackets;
+std::mutex PacketSniffer::mutex;
 
 PacketStats stats;  // Instantiate the global stats object
 
@@ -61,6 +66,8 @@ void PacketSniffer::packetHandler(u_char* args, const struct pcap_pkthdr* header
     parser.parsePacket();
     stats.updateStats(parser);  // Update stats
     std::cout << "\rPackets Captured: " << stats.totalPackets << std::flush;
+    std::lock_guard<std::mutex> lock(mutex);
+    capturedPackets.push_back("Captured packet of length " + std::to_string(header->len));
     if (parser.isTCP()) {
         std::cout << parser.getTCPDetails() << std::endl;
     } else if (parser.isUDP()) {
@@ -74,4 +81,8 @@ void PacketSniffer::packetHandler(u_char* args, const struct pcap_pkthdr* header
     if (stats.totalPackets % 100 == 0) {
         stats.printStats();
     }
+}
+std::vector<std::string> PacketSniffer::getCapturedPackets() {
+    std::lock_guard<std::mutex> lock(mutex);
+    return capturedPackets;
 }

@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//The directory containing a CMake configuration file for Boost.
+Boost_DIR:PATH=/opt/homebrew/lib/cmake/Boost-1.87.0
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 
@@ -219,6 +222,15 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/opt/homebrew/bin/pkg-config
 
+//The directory containing a CMake configuration file for boost_headers.
+boost_headers_DIR:PATH=/opt/homebrew/lib/cmake/boost_headers-1.87.0
+
+//The directory containing a CMake configuration file for boost_system.
+boost_system_DIR:PATH=/opt/homebrew/lib/cmake/boost_system-1.87.0
+
+//The directory containing a CMake configuration file for boost_thread.
+boost_thread_DIR:PATH=/opt/homebrew/lib/cmake/boost_thread-1.87.0
+
 //Value Computed by CMake
 cloud_native_network_packet_analyzer_BINARY_DIR:STATIC=/Users/dhruvilkotecha/Documents/python/cloud_native_network_packet_analyzer/build
 
@@ -308,6 +320,8 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Test CMAKE_HAVE_LIBC_PTHREAD
+CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/Users/dhruvilkotecha/Documents/python/cloud_native_network_packet_analyzer
@@ -377,6 +391,8 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/opt/homebrew/bin/pkg-config][v2.3.0()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 PCAP_CFLAGS:INTERNAL=-I/opt/homebrew/Cellar/libpcap/1.10.5/include
 PCAP_CFLAGS_I:INTERNAL=
 PCAP_CFLAGS_OTHER:INTERNAL=
@@ -418,6 +434,12 @@ PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 __pkg_config_arguments_PCAP:INTERNAL=REQUIRED;libpcap
 __pkg_config_checked_PCAP:INTERNAL=1
+//ADVANCED property for variable: boost_headers_DIR
+boost_headers_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: boost_system_DIR
+boost_system_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: boost_thread_DIR
+boost_thread_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PCAP_pcap
 pkgcfg_lib_PCAP_pcap-ADVANCED:INTERNAL=1
 prefix_result:INTERNAL=/opt/homebrew/Cellar/libpcap/1.10.5/lib

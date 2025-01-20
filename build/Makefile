@@ -177,6 +177,30 @@ src/PacketSniffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cloud_native_network_packet_analyzer.dir/build.make CMakeFiles/cloud_native_network_packet_analyzer.dir/src/PacketSniffer.cpp.s
 .PHONY : src/PacketSniffer.cpp.s
 
+src/RestAPI.o: src/RestAPI.cpp.o
+.PHONY : src/RestAPI.o
+
+# target to build an object file
+src/RestAPI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cloud_native_network_packet_analyzer.dir/build.make CMakeFiles/cloud_native_network_packet_analyzer.dir/src/RestAPI.cpp.o
+.PHONY : src/RestAPI.cpp.o
+
+src/RestAPI.i: src/RestAPI.cpp.i
+.PHONY : src/RestAPI.i
+
+# target to preprocess a source file
+src/RestAPI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cloud_native_network_packet_analyzer.dir/build.make CMakeFiles/cloud_native_network_packet_analyzer.dir/src/RestAPI.cpp.i
+.PHONY : src/RestAPI.cpp.i
+
+src/RestAPI.s: src/RestAPI.cpp.s
+.PHONY : src/RestAPI.s
+
+# target to generate assembly for a file
+src/RestAPI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cloud_native_network_packet_analyzer.dir/build.make CMakeFiles/cloud_native_network_packet_analyzer.dir/src/RestAPI.cpp.s
+.PHONY : src/RestAPI.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -216,6 +240,9 @@ help:
 	@echo "... src/PacketSniffer.o"
 	@echo "... src/PacketSniffer.i"
 	@echo "... src/PacketSniffer.s"
+	@echo "... src/RestAPI.o"
+	@echo "... src/RestAPI.i"
+	@echo "... src/RestAPI.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

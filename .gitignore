@@ -1,0 +1,16 @@
+# Ignore build directory
+build/
+
+# Ignore compiled files
+*.o
+*.d
+*.cmake
+Makefile
+
+# Ignore executables
+cloud_native_network_packet_analyzer
+
+# Ignore system files
+.DS_Store
+.vscode/
+.idea/

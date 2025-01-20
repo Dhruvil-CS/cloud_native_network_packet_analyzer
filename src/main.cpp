@@ -3,6 +3,8 @@
 #include <cstring>
 #include <pcap.h>
 #include "PacketSniffer.h"
+#include <thread>
+#include "RestAPI.h"
 
 void printUsage() {
     std::cout << "Usage: sudo ./cloud_native_network_packet_analyzer --interface <interface> --protocol <protocol>\n";
@@ -42,7 +44,14 @@ int main(int argc, char* argv[]) {
 
     // Start the sniffer
     PacketSniffer sniffer(interface, protocol);
-    sniffer.startSniffing();
+    // sniffer.startSniffing();
+    std::thread snifferThread([&]() {
+        sniffer.startSniffing();
+    });
+    RestAPI api;
+    api.startServer(5050);  // Start the REST API server on port 5050
+
+    snifferThread.join();
 
     return 0;
 }

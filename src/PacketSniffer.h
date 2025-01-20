@@ -2,6 +2,9 @@
 #define PACKET_SNIFFER_H
 #include <fstream>
 #include <string>
+#include <vector>
+#include <mutex>
+#include <fstream>
 #include <iostream>
 #include <pcap.h>
 #include "PacketParser.h"  // Include the PacketParser header
@@ -60,10 +63,13 @@ public:
     PacketSniffer(const std::string& interface, const std::string& protocol);
     void startSniffing();
     static void packetHandler(u_char* args, const struct pcap_pkthdr* header, const u_char* packet);
+    static std::vector<std::string> getCapturedPackets();
 
 private:
     std::string interfaceName;
     std::string protocolFilter;
+    static std::vector<std::string> capturedPackets;
+    static std::mutex mutex; 
 };
 
 #endif
