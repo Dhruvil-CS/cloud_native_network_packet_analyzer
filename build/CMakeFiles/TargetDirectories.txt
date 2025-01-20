@@ -1,3 +1,0 @@
-/Users/dhruvilkotecha/Documents/python/cloud_native_network_packet_analyzer/build/CMakeFiles/cloud_native_network_packet_analyzer.dir
-/Users/dhruvilkotecha/Documents/python/cloud_native_network_packet_analyzer/build/CMakeFiles/edit_cache.dir
-/Users/dhruvilkotecha/Documents/python/cloud_native_network_packet_analyzer/build/CMakeFiles/rebuild_cache.dir
