@@ -1,3 +1,10 @@
+/*
+ * main.cpp
+ * 
+ * This file serves as the entry point for the "Cloud Native Network Packet Analyzer" application.
+ * It parses command-line arguments to configure the packet sniffer and starts both the packet
+ * capture process and a REST API server for interaction.
+ */ 
 #include <iostream>
 #include <string>
 #include <cstring>

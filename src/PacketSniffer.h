@@ -1,3 +1,11 @@
+/*
+ * PacketSniffer.h
+ * 
+ * This file defines the PacketSniffer and PacketStats classes, which are responsible 
+ * for capturing and analyzing network packets in real time. It provides functionality 
+ * for sniffing packets from a specified network interface, applying protocol filters, 
+ * and collecting detailed statistics about the captured traffic.
+ */ 
 #ifndef PACKET_SNIFFER_H
 #define PACKET_SNIFFER_H
 #include <fstream>

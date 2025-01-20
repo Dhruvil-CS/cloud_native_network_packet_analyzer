@@ -1,3 +1,11 @@
+/*
+ * PacketParser.cpp
+ * 
+ * This file implements the PacketParser class, responsible for parsing and analyzing 
+ * network packets. The class extracts various protocol headers (TCP, UDP, ICMP) from 
+ * raw packet data and provides methods to retrieve key details such as source and 
+ * destination IP addresses, protocol-specific information, and packet length.
+ */
 #include "PacketParser.h"
 #include <arpa/inet.h>
 #include <sstream>
@@ -5,7 +13,6 @@
 #include <netinet/tcp.h>  // For TCP headers
 #include <netinet/udp.h>  // For UDP headers
 
-// Constructor initializes variables
 PacketParser::PacketParser(const u_char* packet, unsigned int length)
     : packet(packet), length(length), ipHeader(nullptr), tcpHeader(nullptr), udpHeader(nullptr), icmpHeader(nullptr) {}
 

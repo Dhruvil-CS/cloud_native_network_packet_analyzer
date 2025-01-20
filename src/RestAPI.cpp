@@ -1,3 +1,10 @@
+/*
+ * RestAPI.cpp
+ * 
+ * This file defines the implementation of the `RestAPI` class, which provides an HTTP server
+ * to interact with the "Cloud Native Network Packet Analyzer." The server listens for incoming
+ * HTTP requests, processes them, and responds with relevant data, such as captured packets.
+ */ 
 #include "RestAPI.h"
 #include <boost/beast.hpp>
 #include <boost/asio.hpp>

@@ -1,3 +1,10 @@
+/*
+ * PacketSniffer.cpp
+ * 
+ * This file implements the PacketSniffer class, which is responsible for capturing network packets
+ * from a specified network interface and applying a protocol filter. It processes packets in real-time
+ * using the libpcap library and integrates with the PacketParser class for packet analysis.
+ */ 
 #include "PacketSniffer.h"
 #include <iostream>
 #include <pcap.h>

@@ -1,3 +1,10 @@
+/*
+ * PacketParser.h
+ * 
+ * This file defines the PacketParser class, which is responsible for parsing and analyzing 
+ * raw network packets captured from a network interface. It provides functionality to 
+ * extract protocol-specific details (TCP, UDP, ICMP) and retrieve source/destination IPs.
+ */ 
 #ifndef PACKET_PARSER_H
 #define PACKET_PARSER_H
 
